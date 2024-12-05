@@ -1,0 +1,127 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\documentclass{tufte-handout}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{makecell, booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{array}
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newcommand{\nl}{\newline}
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+% Caslon typefaces
+\usepackage{mathspec}
+%\usepackage{xltxtra}
+%\usepackage{xunicode}
+%\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont{ACaslonPro}[
+%Scale=1.1,Ligatures={Common},
+%Extension = .otf,
+%UprightFont = *-Regular,
+%ItalicFont = *-Italic,
+%BoldFont = *-Bold,
+%BoldItalicFont = *-BoldItalic]
+%\setmathrm{ACaslonPro-Regular.otf}
+%\setmathfont(Digits,Latin){ACaslonPro-Italic.otf}
+
+  % Set up the spacing using fontspec features
+  \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+  \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+  
+\renewcommand\cellalign{tl}
+% precis environment
+\newcommand{\precis}[1]{\begin{fullwidth}\emph{#1}\end{fullwidth}\vspace{0.5em}}
+
+%%%%%%%%%%%%%%%%%%%%%%%% TITLE and AUTHOR %%%%%%%%%%%%%%
+\title[PhD Plan for CANDIDATE]{Department of \mbox{Data Science for public policy}\\PhD Plan for CANDIDATE}
+
+% list committee members
+\author[]{Committee:\\
+Prof.~MEMBER1\\
+Dr.~MEMBER2\\
+Dr.~MEMBER3}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{marginfigure}[-5.2cm]
+\includegraphics[width=3.5cm]{Minerva.pdf}
+\end{marginfigure}
+
+\section{Phenomenon}
+There has been many studies and explaining turnover intentions of civil servants in both South Korea and United States.\cite{HenrichMcElreath:2003}. These days, machine learning techniques have enabled us to make predictions on such intention, using various survey data. However, those studies mainly focused on the relationship of job satisfaction and turnover intentions, which are considered as internal and individual factors. Furthermore, researches that studied turnover rate itself are rare. Studies that focus on only internal motivations lack insights about the external environment that causes the actual behavior itself. Meanwhile, researches that predict and explain behavior-related incident rates such as rate of suicide attempts according with external variables can be found in studies in other fields, health care for instance.
+.\cite{HenrichMcElreath:2003} Additional references can be included at the end bibliography by using \verb|\nocite|. \nocite{NBGA2005}
+
+\section{Theoretical Perspective}
+The rule of minority government refers to the situtation that the leader of the administrative branch belongs to a party which only takes few seats in the legislative branch, thereby having a neglegable impact on legislations. Minority governments often face instability, leading to strengthened inspections and investigations against the executive brangh. Plus, delay in policy implementations become prevalent. All these friction dynamics lead to the increased workload on public servants working in executive branch.
+
+\section{Approach}
+Therefore, turnover rate of young individuals working in public sector is inevitably related with the dynamics of minority government situations. And the proof of this relationship has to be derived from the actual data,  which includes the volume of required documents requested by the legislative branch and the rate of career change of young public servants.
+
+\section{Specifics of Approach}
+On this paper , we are using multivariate analysis(difference in difference) to test our hypothesis that the minority rulling local government leads to higher attrition rate of low-rank civil servants working in local public sector. According to previous research, other factors such as sex ratio, geographic features, and unemployment rate also influence the attrition rate of public employees. We are attempting to control for these variables in this study. About the geospatial data, we are going to use Convolutional Neural Network to analyze and cluster satelite image, and make it into numeric variable. Can use citation\cite{Merowetal2014} for further detail.
+
+\section{Expected Products}
+\begin{enumerate}
+
+\item \emph{Attrition Rate of Local Government Employees: Focusing on the Political Situation of Local Governments} There are many factors that increase the turnover of young public employees. Can political situation be one of the factors? In this paper, we investigate the relationship between the specific political situation called minority rulling state, and the attrition rate of young local government employees. The result of multivariate analysis using difference in difference method shows that if the local council is dominated by the opposition party, the attrition rate rises significantly.  
+
+\end{enumerate}
+
+\section{Schedule}
+Below is the outline of the calendar of the work
+
+\vspace{1em}
+\begin{fullwidth}
+{\centering
+\begin{longtable}{lll}
+\toprule
+\makecell{Date\\(Duration)} & Phase & Comment\\
+
+\midrule
+\makecell{Dec 2024\\(2 months)} & \makecell{Phase 1} & Collect and read background research \\
+
+\midrule
+\makecell{Feb 2025\\(2 months)} & \makecell{Phase 2} & \makecell{Collect data \#1 and \#2} \\
+
+\midrule
+\makecell{April 2025\\(6 months)} & \makecell{Phase 3} & Analysis of data \\
+
+\midrule
+\makecell{nov 2025\\(3 months)} & \makecell{Phase 4} & Write paper and submit \#3 \\
+
+\bottomrule
+\end{longtable}
+}
+\end{fullwidth}
+
+\bibliography{bibliography}
+\bibliographystyle{abbrv}
+
+
+\end{document}
